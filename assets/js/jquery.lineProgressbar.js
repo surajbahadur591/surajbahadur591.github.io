@@ -1,9 +1,4 @@
-/**
- * jQuery Line Progressbar
- * Author: KingRayhan<rayhan095@gmail.com>
- * Author URL: http://rayhan.info
- * Version: 1.0.0
- */
+
 
 (function($){
 	'use strict';
