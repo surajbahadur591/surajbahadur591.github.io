@@ -1,0 +1,60 @@
+.page-title, .subtitle, .home-page .home-box h1, .testimonial .testi-profile span, .widget-submenu ul li, .widget-blog .latest-post .tag a, .post span ,.recoba-tabs .nav-tabs > li > a, ul.post-comment li a{
+	color:#fe8178;
+}
+
+  .widget-submenu ul li a:hover{ 
+  	color: #fe8178; 
+  }
+
+.recoba-btn2:before{
+  background: #fe8178;
+}
+
+
+
+#testimonial .owl-page span{
+	border:solid 1px #fe8178;
+}
+
+.but-big:hover {
+  background:#fe8178; 
+} 
+
+
+.widget-tags ul li a:hover{
+	background:#fe8178;
+  }
+
+
+
+.recoba-tabs .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+    border-top: solid 2px #fe8178;
+}
+
+
+.recoba-btn2:hover, .recoba-btn2:focus, .recoba-btn2:active {
+  color: white;
+  border:solid 1px #fe8178;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
