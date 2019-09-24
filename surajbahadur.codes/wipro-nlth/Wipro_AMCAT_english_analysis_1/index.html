@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from goalkicker.com/Angular2Book/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Aug 2019 00:32:22 GMT -->
+<head>
+<title>Free Angular 2+ Book</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=700">
+<meta property="og:title" content="Free Angular 2+ Book" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="Angular2Grow.png" />
+<meta property="og:url" content="https://books.goalkicker.com/Angular2Book" />
+<meta name="description" content="Getting started with Angular 2, Components, Modules, Pipes, Page title, Angular - ForLoop, Http Interceptor, Templates, Component interactions, Dynamically add components using ViewContainerRef.createComponent, Directives, Directives &amp; components : @Input @Output, Routing and ngrx" />
+<meta name="keywords" content="Angular 2+ Book,Angular 2+ Programming Books,Angular 2+ PDF Book,Angular 2+ Tutorial" />
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="canonical" href="https://books.goalkicker.com/Angular2Book/">
+<style>
+a:link, a:visited, a:hover, a:active {
+    color: #1a0dab;
+}
+
+.grow {
+	transition: all .3s ease-in-out;
+	transform: scale(0.9);
+}
+
+.grow:hover, .grow:focus {
+	transform: scale(1);
+}
+
+.books {
+	max-width: 1030px;
+	margin: auto;
+}
+
+img.grow {
+	border: 0px;
+}
+
+body, html {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+body, button {
+	text-align: center;
+	font-family: 'Quicksand', sans-serif;
+	background-color: #fafafa;
+}
+
+h1, h2 {
+	margin: 0px;
+}
+
+#header h1 {
+	margin-top: -2px;
+}
+
+img {
+	border: 0px;
+}
+
+button.download {
+	background-color: #c30e2e;
+	text-decoration:underline;
+	color: #ffffff;
+	border-radius:10px;
+	width: 300px;
+	height: 60px;
+	border: 0px;
+	cursor: pointer;
+	transform: scale(0.9);
+	transition: all .1s ease-in-out;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+
+button.signup {
+	background-color: #c30e2e;
+	text-decoration:underline;
+	color: #ffffff;
+	border-radius:10px;
+	width: 200px;
+	height: 60px;
+	border: 0px;
+	cursor: pointer;
+	transform: scale(0.9);
+	transition: all .1s ease-in-out;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.user-signup input {
+    width: 250px;
+    border: 1px solid #c30e2e;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.user-signup th {
+	text-align: right;
+}
+
+button:hover {
+	transform: scale(1);
+}
+
+.contents {
+	text-align: left;
+	list-style-type: none;
+	margin: auto;
+	column-count: 2;
+	font-size: 14px;
+	counter-reset: chapterCount 0 appendixCount 0;
+}
+
+.feedback-list {
+	column-count: 2;
+}
+
+.contents li.chapter-type:before { 
+	counter-increment: chapterCount;
+	content: 'Chapter 'counter(chapterCount)': ';
+}
+
+.contents li.appendix-type:before { 
+	counter-increment: appendixCount;
+	content: 'Appendix 'counter(appendixCount, upper-alpha)': ';
+}
+
+#page {
+	margin: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 90px;
+	padding-bottom: 140px;
+	background-color: #ffffff;
+	max-width: 1100px;
+}
+
+#header {
+	width: 100%;
+	min-height: 50px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 4;
+}
+
+#headerBackground {
+	width: 100%;
+	min-height: 50px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #ffffff;
+	z-index: 3;
+	opacity: 0.6;
+	box-shadow: 0px 0px 18px 0px #cccccc;
+}
+
+#headerBackground h1 {
+	color: #ffffff;
+}
+
+#footer {
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	padding: 10px;
+	z-index: 4;
+}
+
+#footerBackground {
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	background: #ffffff;
+	padding: 10px;
+	z-index: 3;
+	opacity: 0.6;
+	box-shadow: 0px 0px 18px 0px #cccccc;
+}
+
+.pagePreview {
+    border: 1px solid #cccccc;
+    box-shadow: 0px 0px 18px 0px #cccccc;
+}
+
+.pagePreview2 {
+    box-shadow: 0px 0px 18px 0px #666666;
+}
+
+#frontpage {
+	float: left;
+	width: 45%;
+	text-align: right;
+	padding-right: 20px;
+	padding-top: 10px;
+}
+
+#contents {
+	float: left;
+	width: 45%;
+	text-align: left;
+}
+
+#examplePages {
+	clear: both;
+	padding-top: 20px;
+}
+
+.notice {
+	font-size: 14px;
+	width: 55%;
+	text-align: left;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.notice-small {
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+.view-more {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.notice a:link, .notice a:visited, .notice a:hover, .notice a:active {
+    color: #000000;
+}
+
+.no-pad {
+	margin: 0px;
+}
+
+.feedback {
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	atext-align: left;
+	width: 85%;
+}
+
+.feedback h2 {
+	text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+	#frontpage {
+		width: 95%;
+		text-align: center;
+	}
+
+	#contents {
+		width: 95%;
+	}
+	
+	#footer {
+		height: 80px;
+	}
+
+	#footerBackground {
+		height: 80px;
+	}
+	
+	.contents {
+		column-count: 1;
+	}
+	
+	.notice {
+		width: 80%;
+	}
+	
+	.feedback-list {
+		column-count: 1;
+	}
+}
+
+blockquote {
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+}
+
+.quotation{
+	quotes: "\201C""\201D""\2018""\2019";
+	padding: 2px 10px;
+	line-height: 1.4;
+}
+
+.quotation:before {
+	content: open-quote;
+	display: inline;
+	height: 0;
+	line-height: 0;
+	left: -2px;
+	position: relative;
+	top: 5px;
+	color: #ccc;
+	font-size: 28px;
+}
+
+.quotation::after {
+	content: close-quote;
+	display: inline;
+	height: 0;
+	line-height: 0;
+	left: 2px;
+	position: relative;
+	top: 10px;
+	color: #ccc;
+	font-size: 28px;
+}
+
+.sign-up {
+	margin-bottom: 40px;
+}
+
+.bookContainer {
+	display: inline-block;
+}
+</style>
+<script>
+var com = com || {};
+com.goalkicker = com.goalkicker || {};
+com.goalkicker.headerFooterGlassEffect = com.goalkicker.headerFooterGlassEffect || {};
+com.goalkicker.headerFooterGlassEffect.headerContent = null;
+com.goalkicker.headerFooterGlassEffect.footerContent = null;
+com.goalkicker.headerFooterGlassEffect.blurAmount = 10;
+
+com.goalkicker.headerFooterGlassEffect.load = function() {
+	var hfge = com.goalkicker.headerFooterGlassEffect;
+	hfge.headerContent = hfge.createReflectElement(true);
+	hfge.footerContent = hfge.createReflectElement(false);
+	document.body.appendChild(hfge.headerContent.parentElement);
+	document.body.appendChild(hfge.footerContent.parentElement);
+	hfge.positionAll();
+	document.addEventListener("scroll", function() {
+		hfge.positionAll();
+	});
+
+	document.addEventListener("touchmove", function() {
+		hfge.positionAll();
+	});
+	
+	window.addEventListener("resize", function() {
+		hfge.positionAll();
+	});
+};
+
+com.goalkicker.headerFooterGlassEffect.getCopy =  function() {
+	var hfge = com.goalkicker.headerFooterGlassEffect;
+	var pageElement = document.getElementById("page");
+	var copyPageElement = document.createElement("div");
+	copyPageElement.style.position = "absolute"
+	copyPageElement.style.backgroundColor = "#FFFFFF";
+	copyPageElement.style.filter = "blur(" + hfge.blurAmount + "px)";
+	copyPageElement.style.zIndex = 1;
+	copyPageElement.innerHTML = pageElement.innerHTML;
+	return copyPageElement;
+}
+
+com.goalkicker.headerFooterGlassEffect.createReflectElement = function(isHeader) {
+	var hfge = com.goalkicker.headerFooterGlassEffect;
+	var elementRelect = document.createElement("div");
+	elementRelect.style.left = "0px";
+	elementRelect.style.zIndex = 2;
+	elementRelect.style.overflow = "hidden";
+	if (isHeader) {
+		elementRelect.style.top = "0px";
+	} else {
+		elementRelect.style.bottom = "0px";
+	}
+	
+	var contentElement = hfge.getCopy();
+	elementRelect.style.position = "fixed"
+	elementRelect.appendChild(contentElement);
+	return contentElement;
+};
+
+com.goalkicker.headerFooterGlassEffect.positionItem = function(content, isHeader) {
+	var pageElement = document.getElementById("page");
+	var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+	var computedStyle = getComputedStyle(pageElement, null);
+	var pageElementPaddingTop = parseInt(computedStyle.getPropertyValue("padding-top"), 10);
+	var pageElementPaddingLeft = parseInt(computedStyle.getPropertyValue("padding-left"), 10);
+	var pageElementPaddingRight = parseInt(computedStyle.getPropertyValue("padding-right"), 10);
+	var originalElement = null;
+	content.style.width = (pageElement.offsetWidth - pageElementPaddingLeft - pageElementPaddingRight) + "px";
+	content.style.height = (pageElement.offsetHeight - pageElementPaddingTop) + "px";
+	content.style.left = (pageElement.offsetLeft + pageElementPaddingLeft) + "px";
+	if (isHeader) {
+		originalElement = document.getElementById("header");
+		content.style.top = (-scrollTop + pageElementPaddingTop) + "px";
+	} else {
+		originalElement = document.getElementById("footer");
+		content.style.top = (-scrollTop + pageElementPaddingTop - window.innerHeight + content.parentElement.offsetHeight) + "px";
+	}
+	
+	content.parentElement.style.width = originalElement.offsetWidth + "px";
+	content.parentElement.style.height = originalElement.offsetHeight + "px";
+};
+
+com.goalkicker.headerFooterGlassEffect.positionAll = function() {
+	var hfge = com.goalkicker.headerFooterGlassEffect;
+	hfge.positionItem(hfge.headerContent, true);
+	hfge.positionItem(hfge.footerContent, false);
+};
+
+function submitForm() {
+	var nameValue = document.getElementById("name").value;
+	var emailValue = document.getElementById("email").value;
+	var http = new XMLHttpRequest();
+	var url = "../sendEmail.html";
+	var params = "message=" + encodeURIComponent(nameValue + ":" + emailValue + ":" + window.location);
+	http.open("POST.html", url, true);
+	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	http.onreadystatechange = function() {
+		if (http.readyState == 4 && http.status == 200) {
+			alert("Success");
+		}
+	}
+	http.send(params);
+	
+	return false;
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111565129-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-111565129-1');
+</script>
+</head>
+<body>
+<div id="headerBackground"><h1>Angular 2+ Notes for Professionals book</h1></div>
+<div id="header"><h1>Angular 2+ Notes for Professionals book</h1></div>
+<div id="page">
+<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- Test -->
+<ins class="adsbygoogle"
+	 style="display:block"
+	 data-ad-client="ca-pub-0641570161571893"
+	 data-ad-slot="7571798105"
+	 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div id="frontpage">
+<a href="Angular2NotesForProfessionals.pdf"><img src="Angular2Grow.png" width="350" height="495" class="pagePreview2" alt="Angular 2+ Book preview"></a><br />
+<small>Angular 2+ Notes for Professionals book</small>
+<br /><br />
+<script>
+reddit_url = 'https://books.goalkicker.com/Angular2Book/';
+reddit_title = 'Free Angular 2+ Book';
+reddit_newwindow = '1';
+</script>
+<script src="../../www.redditstatic.com/button/button3.js"></script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "../../platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+<script src="../../platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+<script type="IN/Share" data-url="https://books.goalkicker.com/Angular2Book/" data-counter="top"></script>
+<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fbooks.goalkicker.com%2FAngular2Book/&amp;layout=box_count&amp;size=large&amp;mobile_iframe=true&amp;appId=1419253208402557&amp;width=73&amp;height=58" width="73" height="58" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+<a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=Free%20Angular%202+%20Book"
+  data-size="large">
+Tweet</a>
+<p class="no-pad"><small>If you found this free Angular 2+ book useful,<br />then please share it &#10084;</small></p>
+	</div>
+	<div id="contents">
+	<h2>Chapters</h2>
+	<ol class="contents">
+		<li class="chapter-type">Getting started with Angular 2+</li>
+		<li class="chapter-type">Components</li>
+		<li class="chapter-type">Component interactions</li>
+		<li class="chapter-type">Directives</li>
+		<li class="chapter-type">Page title</li>
+		<li class="chapter-type">Templates</li>
+		<li class="chapter-type">Commonly built-in directives and services</li>
+		<li class="chapter-type">Directives &amp; components : @Input @Output</li>
+		<li class="chapter-type">Attribute directives to affect the value of properties on the host node by using the @HostBinding decorator.</li>
+		<li class="chapter-type">How to Use ngif</li>
+		<li class="chapter-type">How to use ngfor</li>
+		<li class="chapter-type">Angular - ForLoop</li>
+		<li class="chapter-type">Modules</li>
+		<li class="chapter-type">Pipes</li>
+		<li class="chapter-type">OrderBy Pipe</li>
+		<li class="chapter-type">Angular 2 Custom Validations</li>
+		<li class="chapter-type">Routing</li>
+		<li class="chapter-type">Routing (3.0.0+)</li>
+		<li class="chapter-type">Dynamically add components using ViewContainerRef.createComponent</li>
+		<li class="chapter-type">Installing 3rd party plugins with angular-cli@1.0.0-beta.10</li>
+		<li class="chapter-type">Lifecycle Hooks</li>
+		<li class="chapter-type">Angular RXJS Subjects and Observables with API requests</li>
+		<li class="chapter-type">Services and Dependency Injection</li>
+		<li class="chapter-type">Service Worker</li>
+		<li class="chapter-type">EventEmitter Service</li>
+		<li class="chapter-type">Optimizing rendering using ChangeDetectionStrategy</li>
+		<li class="chapter-type">Angular 2 Forms Update</li>
+		<li class="chapter-type">Detecting resize events</li>
+		<li class="chapter-type">Testing ngModel</li>
+		<li class="chapter-type">Feature Modules</li>
+		<li class="chapter-type">Bootstrap Empty module in angular 2</li>
+		<li class="chapter-type">Lazy loading a module</li>
+		<li class="chapter-type">Advanced Component Examples</li>
+		<li class="chapter-type">Bypassing Sanitizing for trusted values</li>
+		<li class="chapter-type">Angular 2 Data Driven Forms</li>
+		<li class="chapter-type">Angular 2 In Memory Web API</li>
+		<li class="chapter-type">Ahead-of-time (AOT) compilation with Angular 2</li>
+		<li class="chapter-type">CRUD in Angular 2 with Restful API</li>
+		<li class="chapter-type">Use native webcomponents in Angular 2</li>
+		<li class="chapter-type">Update typings</li>
+		<li class="chapter-type">Mocking @ngrx/Store</li>
+		<li class="chapter-type">ngrx</li>
+		<li class="chapter-type">Http Interceptor</li>
+		<li class="chapter-type">Animation</li>
+		<li class="chapter-type">Zone.js</li>
+		<li class="chapter-type">Angular 2 Animations</li>
+		<li class="chapter-type">Create an Angular 2+ NPM package</li>
+		<li class="chapter-type">Angular 2 CanActivate</li>
+		<li class="chapter-type">Angular  2 - Protractor</li>
+		<li class="chapter-type">Example for routes such as /route/subroute for static urls</li>
+		<li class="chapter-type">Angular 2 Input() output()</li>
+		<li class="chapter-type">Angular-cli</li>
+		<li class="chapter-type">Angular 2 Change detection and manual triggering</li>
+		<li class="chapter-type">Angular 2 Databinding</li>
+		<li class="chapter-type">Brute Force Upgrading</li>
+		<li class="chapter-type">Angular 2 provide external data to App before bootstrap</li>
+		<li class="chapter-type">custom ngx-bootstrap datepicker + input</li>
+		<li class="chapter-type">Using third party libraries like jQuery in Angular 2</li>
+		<li class="chapter-type">Configuring ASP.net Core application to work with Angular 2 and TypeScript</li>
+		<li class="chapter-type">Angular 2 using webpack</li>
+		<li class="chapter-type">Angular material design</li>
+		<li class="chapter-type">Dropzone in Angular 2</li>
+		<li class="chapter-type">angular redux</li>
+		<li class="chapter-type">Creating an Angular npm library</li>
+		<li class="chapter-type">Barrel</li>
+		<li class="chapter-type">Testing an Angular 2 App</li>
+		<li class="chapter-type">angular-cli test coverage</li>
+		<li class="chapter-type">Debugging Angular 2 TypeScript application using Visual Studio Code</li>
+		<li class="chapter-type">unit testing</li>
+	</ol>
+	</div>
+	<div id="examplePages">
+	<h2>Example book pages</h2>
+		<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+	<!-- Test -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-0641570161571893"
+		 data-ad-slot="7571798105"
+		 data-ad-format="auto"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+<img src="Angular2ExamplePage1.png" width="500" height="707" class="pagePreview" alt="Angular 2+ Example Page 1"><img src="Angular2ExamplePage2.png" width="500" height="707" class="pagePreview" alt="Angular 2+ Example Page 2"><br />	<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+	<!-- Test -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-0641570161571893"
+		 data-ad-slot="7571798105"
+		 data-ad-format="auto"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script><img src="Angular2ExamplePage3.png" width="500" height="707" class="pagePreview" alt="Angular 2+ Example Page 3"><img src="Angular2ExamplePage4.png" width="500" height="707" class="pagePreview" alt="Angular 2+ Example Page 4">
+	</div>
+	<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+	<!-- Test -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-0641570161571893"
+		 data-ad-slot="7571798105"
+		 data-ad-format="auto"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	<div class="feedback">
+		<h2>What people are saying about Notes for Professionals books</h2>
+		<div class="feedback-list">
+		<blockquote><p class="quotation">This is perfect for me who's learning to code!</p></blockquote>
+		<blockquote><p class="quotation">A lot of effort went into this, I also took a look at the languages I'm familiar with. They even have screenshots of the results and provide an excellent way of showing exactly what you would input and see. I really appreciate the fact that they are pdf that you can save and don't have to rely on an internet connection.</p></blockquote>
+		<blockquote><p class="quotation">Great collection. Thanks for making them available to the community.</p></blockquote>
+		<blockquote><p class="quotation">This is the best resources I have come across. Thank you for sharing!</p></blockquote>
+		<blockquote><p class="quotation">Super useful for reference, many thanks for whoever did this. Instead of browsing, clicking, digging infinitely, now I have ONE in one place.</p></blockquote>
+		<blockquote><p class="quotation">Wow. This is awesome. Thank you!</p></blockquote>
+</div>
+	</div>
+	<div class="notice">
+		<p>The <i>Angular 2+ Notes for Professionals</i> book is compiled from <a href="https://archive.org/details/documentation-dump.7z" target="_blank">Stack Overflow Documentation</a>, the content is written by the beautiful people at Stack Overflow. Text content is released under Creative Commons BY-SA. See credits at the end of this book whom contributed to the various chapters. Images may be copyright of their respective owners unless otherwise specified</p>
+		<p>Book created for educational purposes and is not affiliated with Angular 2+ group(s), company(s) nor Stack Overflow. All trademarks belong to their respective company owners</p>
+		<p>232 pages, published on June 2018</p>
+	</div>
+	<div class="sign-up">
+	<form>
+	<h2>Sign up for changes to Angular 2+ Notes for Professionals book</h2>
+	<table style="margin:auto;" class="user-signup">
+		<tr><th>Name:</th><td><input type="text" id="name" /></td></tr>
+		<tr><th>Email:</th><td><input type="text" id="email" /></td></tr>
+		<tr><td colspan="2"><button class="signup" onclick="return submitForm()">Sign up</button></td></tr>
+	</table>
+	</form>
+	</div>
+	<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+	<!-- Test -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-0641570161571893"
+		 data-ad-slot="7571798105"
+		 data-ad-format="auto"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	<div class="view-more">
+	<div>
+		<div class="bookContainer grow"><a href="../DotNETFrameworkBook/index.html" target="_blank"><img src="../DotNETFrameworkBook/DotNETFrameworkSmall.png" width="150" height="212" alt="DotNETFramework Book"></a></div>
+		<div class="bookContainer grow"><a href="../AngularJSBook/index.html" target="_blank"><img src="../AngularJSBook/AngularJSSmall.png" width="150" height="212" alt="AngularJS Book"></a></div>
+		<div class="bookContainer grow"><a href="../GitBook/index.html" target="_blank"><img src="../GitBook/GitSmall.png" width="150" height="212" alt="Git Book"></a></div>
+		<div class="bookContainer grow"><a href="../JavaScriptBook/index.html" target="_blank"><img src="../JavaScriptBook/JavaScriptSmall.png" width="150" height="212" alt="JavaScript Book"></a></div>
+		<div class="bookContainer grow"><a href="../jQueryBook/index.html" target="_blank"><img src="../jQueryBook/jQuerySmall.png" width="150" height="212" alt="jQuery Book"></a></div>
+		<div class="bookContainer grow"><a href="../MongoDBBook/index.html" target="_blank"><img src="../MongoDBBook/MongoDBSmall.png" width="150" height="212" alt="MongoDB Book"></a></div>
+		<div class="bookContainer grow"><a href="../NodeJSBook/index.html" target="_blank"><img src="../NodeJSBook/NodeJSSmall.png" width="150" height="212" alt="NodeJS Book"></a></div>
+		<div class="bookContainer grow"><a href="../PythonBook/index.html" target="_blank"><img src="../PythonBook/PythonSmall.png" width="150" height="212" alt="Python Book"></a></div>
+		<div class="bookContainer grow"><a href="../TypeScriptBook/index.html" target="_blank"><img src="../TypeScriptBook/TypeScriptSmall.png" width="150" height="212" alt="TypeScript Book"></a></div>
+		</div>
+	<h3><a href="../index.html" target="_blank">View More Programming Books</a></h3>
+	</div>
+	<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+	<!-- Test -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-0641570161571893"
+		 data-ad-slot="7571798105"
+		 data-ad-format="auto"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	<div class="notice notice-small">
+		<p>To support continued development and improvements to this book, please consider a small bitcoin donation: 1H63m55bw6KDYUaKU1mYLGrzDf4wcrVzhX</p>
+	</div>
+	</div>
+	<div id="footerBackground"></div>
+	<div id="footer">Angular2NotesForProfessionals.pdf <button class="download" onclick="location.href='Angular2NotesForProfessionals.pdf'">Download PDF Book</button></div>
+<script>
+com.goalkicker.headerFooterGlassEffect.load();
+
+window.onload = function() {
+	var hfge = com.goalkicker.headerFooterGlassEffect;
+	hfge.positionAll();
+}
+</script>
+</body>
+
+<!-- Mirrored from goalkicker.com/Angular2Book/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Aug 2019 00:32:26 GMT -->
+</html>
