@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="76px" height="76px" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Border</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Template" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.300000012">
+        <g id="Landing-v.1" transform="translate(-560.000000, -2168.000000)" fill-rule="nonzero" fill="#FFFFFF">
+            <g id="Testimonials" transform="translate(88.000000, 2048.000000)">
+                <g id="Review" transform="translate(472.000000, 120.000000)">
+                    <g id="Avatar">
+                        <path d="M0,38 C0,58.9868205 17.0131795,76 38,76 C58.9868205,76 76,58.9868205 76,38 C76,17.0131795 58.9868205,0 38,0 L38,2 C57.882251,2 74,18.117749 74,38 C74,57.882251 57.882251,74 38,74 C18.117749,74 2,57.882251 2,38 L0,38 Z" id="Border"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
