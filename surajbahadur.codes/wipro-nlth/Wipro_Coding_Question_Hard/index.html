@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from goalkicker.com/HaskellBook/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Aug 2019 00:32:47 GMT -->
+<head>
+<title>Free Haskell Book</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=700">
+<meta property="og:title" content="Free Haskell Book" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="HaskellGrow.png" />
+<meta property="og:url" content="https://books.goalkicker.com/HaskellBook" />
+<meta name="description" content="Getting started with Haskell Language, Overloaded Literals, Foldable, Traversable, Lens, QuickCheck, Common GHC Language Extensions, Free Monads, Type Classes, IO, Record Syntax, Partial Application, Monoid, Category Theory, Lists, Sorting Algorithms, Type Families, Monads and XML" />
+<meta name="keywords" content="Haskell Book,Haskell Programming Books,Haskell PDF Book,Haskell Tutorial" />
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+<link rel="canonical" href="https://books.goalkicker.com/HaskellBook/">
+<style>
+a:link, a:visited, a:hover, a:active {
+    color: #1a0dab;
+}
+
+.grow {
+	transition: all .3s ease-in-out;
+	transform: scale(0.9);
+}
+
+.grow:hover, .grow:focus {
+	transform: scale(1);
+}
+
+.books {
+	max-width: 1030px;
+	margin: auto;
+}
+
+img.grow {
+	border: 0px;
+}
+
+body, html {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+body, button {
+	text-align: center;
+	font-family: 'Quicksand', sans-serif;
+	background-color: #fafafa;
+}
+
+h1, h2 {
+	margin: 0px;
+}
+
+#header h1 {
+	margin-top: -2px;
+}
+
+img {
+	border: 0px;
+}
+
+button.download {
+	background-color: #483465;
+	text-decoration:underline;
+	color: #ffffff;
+	border-radius:10px;
+	width: 300px;
+	height: 60px;
+	border: 0px;
+	cursor: pointer;
+	transform: scale(0.9);
+	transition: all .1s ease-in-out;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+
+button.signup {
+	background-color: #483465;
+	text-decoration:underline;
+	color: #ffffff;
+	border-radius:10px;
+	width: 200px;
+	height: 60px;
+	border: 0px;
+	cursor: pointer;
+	transform: scale(0.9);
+	transition: all .1s ease-in-out;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.user-signup input {
+    width: 250px;
+    border: 1px solid #483465;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.user-signup th {
+	text-align: right;
+}
+
+button:hover {
+	transform: scale(1);
+}
+
+.contents {
+	text-align: left;
+	list-style-type: none;
+	margin: auto;
+	column-count: 2;
+	font-size: 14px;
+	counter-reset: chapterCount 0 appendixCount 0;
+}
+
+.feedback-list {
+	column-count: 2;
+}
+
+.contents li.chapter-type:before { 
+	counter-increment: chapterCount;
+	content: 'Chapter 'counter(chapterCount)': ';
+}
+
+.contents li.appendix-type:before { 
+	counter-increment: appendixCount;
+	content: 'Appendix 'counter(appendixCount, upper-alpha)': ';
+}
+
+#page {
+	margin: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 90px;
+	padding-bottom: 140px;
+	background-color: #ffffff;
+	max-width: 1100px;
+}
+
+#header {
+	width: 100%;
+	min-height: 50px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 4;
+}
+
+#headerBackground {
+	width: 100%;
+	min-height: 50px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #ffffff;
+	z-index: 3;
+	opacity: 0.6;
+	box-shadow: 0px 0px 18px 0px #cccccc;
+}
+
+#headerBackground h1 {
+	color: #ffffff;
+}
+
+#footer {
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	padding: 10px;
+	z-index: 4;
+}
+
+#footerBackground {
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	background: #ffffff;
+	padding: 10px;
+	z-index: 3;
+	opacity: 0.6;
+	box-shadow: 0px 0px 18px 0px #cccccc;
+}
+
+.pagePreview {
+    border: 1px solid #cccccc;
+    box-shadow: 0px 0px 18px 0px #cccccc;
+}
+
+.pagePreview2 {
+    box-shadow: 0px 0px 18px 0px #666666;
+}
+
+#frontpage {
+	float: left;
+	width: 45%;
+	text-align: right;
+	padding-right: 20px;
+	padding-top: 10px;
+}
+
+#contents {
+	float: left;
+	width: 45%;
+	text-align: left;
+}
+
+#examplePages {
+	clear: both;
+	padding-top: 20px;
+}
+
+.notice {
+	font-size: 14px;
+	width: 55%;
+	text-align: left;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+.notice-small {
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+.view-more {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.notice a:link, .notice a:visited, .notice a:hover, .notice a:active {
+    color: #000000;
+}
+
+.no-pad {
+	margin: 0px;
+}
+
+.feedback {
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 30px;
+	atext-align: left;
+	width: 85%;
+}
+
+.feedback h2 {
+	text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+	#frontpage {
+		width: 95%;
+		text-align: center;
+	}
+
+	#contents {
+		width: 95%;
+	}
+	
+	#footer {
+		height: 80px;
+	}
+
+	#footerBackground {
+		height: 80px;
+	}
+	
+	.contents {
+		column-count: 1;
+	}
+	
+	.notice {
+		width: 80%;
+	}
+	
+	.feedback-list {
+		column-count: 1;
+	}
+}
+
+blockquote {
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+}
+
+.quotation{
+	quotes: "\201C""\201D""\2018""\2019";
+	padding: 2px 10px;
+	line-height: 1.4;
+}
+
+.quotation:before {
+	content: open-quote;
+	display: inline;
+	height: 0;
+	line-height: 0;
+	left: -2px;
+	position: relative;
+	top: 5px;
+	color: #ccc;
+	font-size: 28px;
+}
+
+.quotation::after {
+	content: close-quote;
+	display: inline;
+	height: 0;
+	line-height: 0;
+	left: 2px;
+	position: relative;
+	top: 10px;
+	color: #ccc;
+	font-size: 28px;
+}
+
+.sign-up {
+	margin-bottom: 40px;
+}
+
+.bookContainer {
+	display: inline-block;
+}
+</style>
+<script>
+var com = com || {};
+com.goalkicker = com.goalkicker || {};
+com.goalkicker.headerFooterGlassEffect = com.goalkicker.headerFooterGlassEffect || {};
+com.goalkicker.headerFooterGlassEffect.headerContent = null;
+com.goalkicker.headerFooterGlassEffect.footerContent = null;
+com.goalkicker.headerFooterGlassEffect.blurAmount = 10;
+
+com.goalkicker.headerFooterGlassEffect.load = function() {
+	var hfge = com.goalkicker.headerFooterGlassEffect;
+	hfge.headerContent = hfge.createReflectElement(true);
+	hfge.footerContent = hfge.createReflectElement(false);
+	document.body.appendChild(hfge.headerContent.parentElement);
+	document.body.appendChild(hfge.footerContent.parentElement);
+	hfge.positionAll();
+	document.addEventListener("scroll", function() {
+		hfge.positionAll();
+	});
+
+	document.addEventListener("touchmove", function() {
+		hfge.positionAll();
+	});
+	
+	window.addEventListener("resize", function() {
+		hfge.positionAll();
+	});
+};
+
+com.goalkicker.headerFooterGlassEffect.getCopy =  function() {
+	var hfge = com.goalkicker.headerFooterGlassEffect;
+	var pageElement = document.getElementById("page");
+	var copyPageElement = document.createElement("div");
+	copyPageElement.style.position = "absolute"
+	copyPageElement.style.backgroundColor = "#FFFFFF";
+	copyPageElement.style.filter = "blur(" + hfge.blurAmount + "px)";
+	copyPageElement.style.zIndex = 1;
+	copyPageElement.innerHTML = pageElement.innerHTML;
+	return copyPageElement;
+}
+
+com.goalkicker.headerFooterGlassEffect.createReflectElement = function(isHeader) {
+	var hfge = com.goalkicker.headerFooterGlassEffect;
+	var elementRelect = document.createElement("div");
+	elementRelect.style.left = "0px";
+	elementRelect.style.zIndex = 2;
+	elementRelect.style.overflow = "hidden";
+	if (isHeader) {
+		elementRelect.style.top = "0px";
+	} else {
+		elementRelect.style.bottom = "0px";
+	}
+	
+	var contentElement = hfge.getCopy();
+	elementRelect.style.position = "fixed"
+	elementRelect.appendChild(contentElement);
+	return contentElement;
+};
+
+com.goalkicker.headerFooterGlassEffect.positionItem = function(content, isHeader) {
+	var pageElement = document.getElementById("page");
+	var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+	var computedStyle = getComputedStyle(pageElement, null);
+	var pageElementPaddingTop = parseInt(computedStyle.getPropertyValue("padding-top"), 10);
+	var pageElementPaddingLeft = parseInt(computedStyle.getPropertyValue("padding-left"), 10);
+	var pageElementPaddingRight = parseInt(computedStyle.getPropertyValue("padding-right"), 10);
+	var originalElement = null;
+	content.style.width = (pageElement.offsetWidth - pageElementPaddingLeft - pageElementPaddingRight) + "px";
+	content.style.height = (pageElement.offsetHeight - pageElementPaddingTop) + "px";
+	content.style.left = (pageElement.offsetLeft + pageElementPaddingLeft) + "px";
+	if (isHeader) {
+		originalElement = document.getElementById("header");
+		content.style.top = (-scrollTop + pageElementPaddingTop) + "px";
+	} else {
+		originalElement = document.getElementById("footer");
+		content.style.top = (-scrollTop + pageElementPaddingTop - window.innerHeight + content.parentElement.offsetHeight) + "px";
+	}
+	
+	content.parentElement.style.width = originalElement.offsetWidth + "px";
+	content.parentElement.style.height = originalElement.offsetHeight + "px";
+};
+
+com.goalkicker.headerFooterGlassEffect.positionAll = function() {
+	var hfge = com.goalkicker.headerFooterGlassEffect;
+	hfge.positionItem(hfge.headerContent, true);
+	hfge.positionItem(hfge.footerContent, false);
+};
+
+function submitForm() {
+	var nameValue = document.getElementById("name").value;
+	var emailValue = document.getElementById("email").value;
+	var http = new XMLHttpRequest();
+	var url = "../sendEmail.html";
+	var params = "message=" + encodeURIComponent(nameValue + ":" + emailValue + ":" + window.location);
+	http.open("POST.html", url, true);
+	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	http.onreadystatechange = function() {
+		if (http.readyState == 4 && http.status == 200) {
+			alert("Success");
+		}
+	}
+	http.send(params);
+	
+	return false;
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111565129-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-111565129-1');
+</script>
+</head>
+<body>
+<div id="headerBackground"><h1>Haskell Notes for Professionals book</h1></div>
+<div id="header"><h1>Haskell Notes for Professionals book</h1></div>
+<div id="page">
+<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- Test -->
+<ins class="adsbygoogle"
+	 style="display:block"
+	 data-ad-client="ca-pub-0641570161571893"
+	 data-ad-slot="7571798105"
+	 data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div id="frontpage">
+<a href="HaskellNotesForProfessionals.pdf"><img src="HaskellGrow.png" width="350" height="495" class="pagePreview2" alt="Haskell Book preview"></a><br />
+<small>Haskell Notes for Professionals book</small>
+<br /><br />
+<script>
+reddit_url = 'https://books.goalkicker.com/HaskellBook/';
+reddit_title = 'Free Haskell Book';
+reddit_newwindow = '1';
+</script>
+<script src="../../www.redditstatic.com/button/button3.js"></script>
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "../../platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+<script src="../../platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+<script type="IN/Share" data-url="https://books.goalkicker.com/HaskellBook/" data-counter="top"></script>
+<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fbooks.goalkicker.com%2FHaskellBook/&amp;layout=box_count&amp;size=large&amp;mobile_iframe=true&amp;appId=1419253208402557&amp;width=73&amp;height=58" width="73" height="58" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+<a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=Free%20Haskell%20Book"
+  data-size="large">
+Tweet</a>
+<p class="no-pad"><small>If you found this free Haskell book useful,<br />then please share it &#10084;</small></p>
+	</div>
+	<div id="contents">
+	<h2>Chapters</h2>
+	<ol class="contents">
+		<li class="chapter-type">Getting started with Haskell Language</li>
+		<li class="chapter-type">Overloaded Literals</li>
+		<li class="chapter-type">Foldable</li>
+		<li class="chapter-type">Traversable</li>
+		<li class="chapter-type">Lens</li>
+		<li class="chapter-type">QuickCheck</li>
+		<li class="chapter-type">Common GHC Language Extensions</li>
+		<li class="chapter-type">Free Monads</li>
+		<li class="chapter-type">Type Classes</li>
+		<li class="chapter-type">IO</li>
+		<li class="chapter-type">Record Syntax</li>
+		<li class="chapter-type">Partial Application</li>
+		<li class="chapter-type">Monoid</li>
+		<li class="chapter-type">Category Theory</li>
+		<li class="chapter-type">Lists</li>
+		<li class="chapter-type">Sorting Algorithms</li>
+		<li class="chapter-type">Type Families</li>
+		<li class="chapter-type">Monads</li>
+		<li class="chapter-type">Stack</li>
+		<li class="chapter-type">Generalized Algebraic Data Types</li>
+		<li class="chapter-type">Recursion Schemes</li>
+		<li class="chapter-type">Data.Text</li>
+		<li class="chapter-type">Using GHCi</li>
+		<li class="chapter-type">Strictness</li>
+		<li class="chapter-type">Syntax in Functions</li>
+		<li class="chapter-type">Functor</li>
+		<li class="chapter-type">Testing with Tasty</li>
+		<li class="chapter-type">Creating Custom Data Types</li>
+		<li class="chapter-type">Reactive-banana</li>
+		<li class="chapter-type">Optimization</li>
+		<li class="chapter-type">Concurrency</li>
+		<li class="chapter-type">Function composition</li>
+		<li class="chapter-type">Databases</li>
+		<li class="chapter-type">Data.Aeson - JSON in Haskell</li>
+		<li class="chapter-type">Higher-order functions</li>
+		<li class="chapter-type">Containers - Data.Map</li>
+		<li class="chapter-type">Fixity declarations</li>
+		<li class="chapter-type">Web Development</li>
+		<li class="chapter-type">Vectors</li>
+		<li class="chapter-type">Cabal</li>
+		<li class="chapter-type">Type algebra</li>
+		<li class="chapter-type">Arrows</li>
+		<li class="chapter-type">Typed holes</li>
+		<li class="chapter-type">Rewrite rules (GHC)</li>
+		<li class="chapter-type">Date and Time</li>
+		<li class="chapter-type">List Comprehensions</li>
+		<li class="chapter-type">Streaming IO</li>
+		<li class="chapter-type">Google Protocol Buffers</li>
+		<li class="chapter-type">Template Haskell &amp; QuasiQuotes</li>
+		<li class="chapter-type">Phantom types</li>
+		<li class="chapter-type">Modules</li>
+		<li class="chapter-type">Tuples (Pairs, Triples, ...)</li>
+		<li class="chapter-type">Graphics with Gloss</li>
+		<li class="chapter-type">State Monad</li>
+		<li class="chapter-type">Pipes</li>
+		<li class="chapter-type">Infix operators</li>
+		<li class="chapter-type">Parallelism</li>
+		<li class="chapter-type">Parsing HTML with taggy-lens and lens</li>
+		<li class="chapter-type">Foreign Function Interface</li>
+		<li class="chapter-type">Gtk3</li>
+		<li class="chapter-type">Monad Transformers</li>
+		<li class="chapter-type">Bifunctor</li>
+		<li class="chapter-type">Proxies</li>
+		<li class="chapter-type">Applicative Functor</li>
+		<li class="chapter-type">Common monads as free monads</li>
+		<li class="chapter-type">Common functors as the base of cofree comonads</li>
+		<li class="chapter-type">Arithmetic</li>
+		<li class="chapter-type">Role</li>
+		<li class="chapter-type">Arbitrary-rank polymorphism with RankNTypes</li>
+		<li class="chapter-type">GHCJS</li>
+		<li class="chapter-type">XML</li>
+		<li class="chapter-type">Reader / ReaderT</li>
+		<li class="chapter-type">Function call syntax</li>
+		<li class="chapter-type">Logging</li>
+		<li class="chapter-type">Attoparsec</li>
+		<li class="chapter-type">zipWithM</li>
+		<li class="chapter-type">Profunctor</li>
+		<li class="chapter-type">Type Application</li>
+	</ol>
+	</div>
+	<div id="examplePages">
+	<h2>Example book pages</h2>
+		<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+	<!-- Test -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-0641570161571893"
+		 data-ad-slot="7571798105"
+		 data-ad-format="auto"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+<img src="HaskellExamplePage1.png" width="500" height="707" class="pagePreview" alt="Haskell Example Page 1"><img src="HaskellExamplePage2.png" width="500" height="707" class="pagePreview" alt="Haskell Example Page 2"><br />	<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+	<!-- Test -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-0641570161571893"
+		 data-ad-slot="7571798105"
+		 data-ad-format="auto"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script><img src="HaskellExamplePage3.png" width="500" height="707" class="pagePreview" alt="Haskell Example Page 3"><img src="HaskellExamplePage4.png" width="500" height="707" class="pagePreview" alt="Haskell Example Page 4">
+	</div>
+	<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+	<!-- Test -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-0641570161571893"
+		 data-ad-slot="7571798105"
+		 data-ad-format="auto"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	<div class="feedback">
+		<h2>What people are saying about Notes for Professionals books</h2>
+		<div class="feedback-list">
+		<blockquote><p class="quotation">Amazing collection of free programming books.</p></blockquote>
+		<blockquote><p class="quotation">A lot of effort went into this, I also took a look at the languages I'm familiar with. They even have screenshots of the results and provide an excellent way of showing exactly what you would input and see. I really appreciate the fact that they are pdf that you can save and don't have to rely on an internet connection.</p></blockquote>
+		<blockquote><p class="quotation">I just download PDF from GoalKicker.com and i look documentation so good and simple.</p></blockquote>
+		<blockquote><p class="quotation">Thank you very much for this! Very useful</p></blockquote>
+		<blockquote><p class="quotation">Great book! Thank you for sharing it.</p></blockquote>
+		<blockquote><p class="quotation">Great collection. Thanks for making them available to the community.</p></blockquote>
+</div>
+	</div>
+	<div class="notice">
+		<p>The <i>Haskell Notes for Professionals</i> book is compiled from <a href="https://archive.org/details/documentation-dump.7z" target="_blank">Stack Overflow Documentation</a>, the content is written by the beautiful people at Stack Overflow. Text content is released under Creative Commons BY-SA. See credits at the end of this book whom contributed to the various chapters. Images may be copyright of their respective owners unless otherwise specified</p>
+		<p>Book created for educational purposes and is not affiliated with Haskell group(s), company(s) nor Stack Overflow. All trademarks belong to their respective company owners</p>
+		<p>230 pages, published on May 2018</p>
+	</div>
+	<div class="sign-up">
+	<form>
+	<h2>Sign up for changes to Haskell Notes for Professionals book</h2>
+	<table style="margin:auto;" class="user-signup">
+		<tr><th>Name:</th><td><input type="text" id="name" /></td></tr>
+		<tr><th>Email:</th><td><input type="text" id="email" /></td></tr>
+		<tr><td colspan="2"><button class="signup" onclick="return submitForm()">Sign up</button></td></tr>
+	</table>
+	</form>
+	</div>
+	<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+	<!-- Test -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-0641570161571893"
+		 data-ad-slot="7571798105"
+		 data-ad-format="auto"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	<div class="view-more">
+	<div>
+		<div class="bookContainer grow"><a href="../CBook/index.html" target="_blank"><img src="../CBook/CSmall.png" width="150" height="212" alt="C Book"></a></div>
+		<div class="bookContainer grow"><a href="../CSharpBook/index.html" target="_blank"><img src="../CSharpBook/CSharpSmall.png" width="150" height="212" alt="CSharp Book"></a></div>
+		<div class="bookContainer grow"><a href="../CPlusPlusBook/index.html" target="_blank"><img src="../CPlusPlusBook/CPlusPlusSmall.png" width="150" height="212" alt="CPlusPlus Book"></a></div>
+		<div class="bookContainer grow"><a href="../JavaBook/index.html" target="_blank"><img src="../JavaBook/JavaSmall.png" width="150" height="212" alt="Java Book"></a></div>
+		<div class="bookContainer grow"><a href="../PerlBook/index.html" target="_blank"><img src="../PerlBook/PerlSmall.png" width="150" height="212" alt="Perl Book"></a></div>
+		<div class="bookContainer grow"><a href="../PHPBook/index.html" target="_blank"><img src="../PHPBook/PHPSmall.png" width="150" height="212" alt="PHP Book"></a></div>
+		<div class="bookContainer grow"><a href="../PythonBook/index.html" target="_blank"><img src="../PythonBook/PythonSmall.png" width="150" height="212" alt="Python Book"></a></div>
+		<div class="bookContainer grow"><a href="../RBook/index.html" target="_blank"><img src="../RBook/RSmall.png" width="150" height="212" alt="R Book"></a></div>
+		<div class="bookContainer grow"><a href="../RubyBook/index.html" target="_blank"><img src="../RubyBook/RubySmall.png" width="150" height="212" alt="Ruby Book"></a></div>
+		</div>
+	<h3><a href="../index.html" target="_blank">View More Programming Books</a></h3>
+	</div>
+	<script async src="../../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+	<!-- Test -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-0641570161571893"
+		 data-ad-slot="7571798105"
+		 data-ad-format="auto"></ins>
+	<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+	<div class="notice notice-small">
+		<p>To support continued development and improvements to this book, please consider a small bitcoin donation: 1H63m55bw6KDYUaKU1mYLGrzDf4wcrVzhX</p>
+	</div>
+	</div>
+	<div id="footerBackground"></div>
+	<div id="footer">HaskellNotesForProfessionals.pdf <button class="download" onclick="location.href='HaskellNotesForProfessionals.pdf'">Download PDF Book</button></div>
+<script>
+com.goalkicker.headerFooterGlassEffect.load();
+
+window.onload = function() {
+	var hfge = com.goalkicker.headerFooterGlassEffect;
+	hfge.positionAll();
+}
+</script>
+</body>
+
+<!-- Mirrored from goalkicker.com/HaskellBook/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Aug 2019 00:32:49 GMT -->
+</html>
