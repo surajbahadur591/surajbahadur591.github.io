@@ -1,4 +1,4 @@
 # surajbahadur591.github.io
-This is my personal portfolio showcasing my skills, qualification and projects i have done. 
+This is my Personal Portfolio showcasing my Skills, Qualification and Projects I have done. 
  
- VIEW HERE: https://surajbahadur.me
+You can view it here : https://surajbahadur.me
