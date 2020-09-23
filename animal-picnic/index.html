@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animal Picnic</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">ape</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">sheep</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">duck</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">ferret</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">guine-pig</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">horse</span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">jaguar</span>
+    </div>
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <span class="sound">kingfisher</span>
+    </div>
+    <div data-key="76" class="key">
+      <kbd>L</kbd>
+      <span class="sound">lion</span>
+    </div>
+  </div>
+
+  <audio data-key="65" src="sounds/ape.mp3"></audio>
+  <audio data-key="83" src="sounds/sheep.mp3"></audio>
+  <audio data-key="68" src="sounds/duck.mp3"></audio>
+  <audio data-key="70" src="sounds/ferret.mp3"></audio>
+  <audio data-key="71" src="sounds/guinea-pig.mp3"></audio>
+  <audio data-key="72" src="sounds/horse.mp3"></audio>
+  <audio data-key="74" src="sounds/Jaguar.mp3"></audio>
+  <audio data-key="75" src="sounds/kingfisher.mp3"></audio>
+  <audio data-key="76" src="sounds/lion.mp3"></audio>
+
+<script>
+  window.addEventListener('keydown', function(e){
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    if(!audio) return;
+    audio.currentTime=0;
+    audio.play();
+    console.log(key);
+
+    key.classList.add('playing');
+  });
+
+  function removeTransition(e) {
+
+    if(e.propertyName != 'transform') return ;
+
+    this.classList.remove('playing');
+
+  }
+
+  const keys = document.querySelectorAll('.key');
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+</script>
+
+
+</body>
+</html>
