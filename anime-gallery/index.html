@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anime Art Gallery</title>
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <style>
+    html {
+      box-sizing: border-box;
+      background: black;
+      /* font-family: 'helvetica neue'; */
+      font-family: 'Bangers', cursive;
+      font-size: 10px;
+      font-weight: 200;
+    }
+    
+    body {
+      margin: 10px;
+    }
+    
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    .panels {
+      min-height: 100vh;
+      overflow: hidden;
+      display: flex;
+    }
+
+    .panel {
+      background: #6B0F9C;
+      box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
+      color: white;
+      text-align: center;
+      align-items: center;
+      /* Safari transitionend event.propertyName === flex */
+      /* Chrome + FF transitionend event.propertyName === flex-grow */
+      transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+      font-size: 20px;
+      background-size: cover;
+      background-position: center;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panel1 { background-image:url(https://i.imgur.com/ykdR4zx.jpg); }
+    .panel2 { background-image:url(https://i.imgur.com/0TRFGlt.jpg); }
+    .panel3 { background-image:url(https://i.imgur.com/HwoKv9E.jpg); }
+    .panel4 { background-image:url(https://i.imgur.com/M1cCHjL.jpg); }
+    .panel5 { background-image:url(https://i.imgur.com/RUbTTJ4.jpg); }
+
+    /* Flex Children */
+    .panel > * {
+      margin: 0;
+      width: 100%;
+      transition: transform 0.5s;
+      /* border: #6B0F9C solid 1px; */
+      flex: 1 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .panel p {
+      text-transform: uppercase;
+      /* font-family: 'Amatic SC', cursive; */
+      font-family: 'Bangers', cursive;
+
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+      font-size: 1em;
+    }
+
+    .panel > *:first-child {
+      transform: translateY(-100%);
+    }
+    .panel.open-active > *:first-child {
+      transform: translateY(0);
+    }
+    
+    .panel > *:last-child {
+      transform: translateY(100%);
+    }
+    .panel.open-active > *:last-child {
+      transform: translateY(0);
+    }
+
+    .panel p:nth-child(2) {
+      font-size: 2em;
+    }
+
+    .panel.open {
+      font-size: 30px;
+      flex: 5;
+    }
+
+  </style>
+
+
+  <div class="panels">
+    <div class="panel panel1">
+      <p>Izuku</p>
+      <p>My Hero Academia</p>
+      <p>Midoriya</p>
+    </div>
+    <div class="panel panel2">
+      <p>Tanjiro</p>
+      <p>Demon Slayer</p>
+      <p>Kamado</p>
+    </div>
+    <div class="panel panel3">
+      <p>Naruto</p>
+      <p>Naruto</p>
+      <p>Uzumaki</p>
+    </div>
+    <div class="panel panel4">
+      <p>Senku</p>
+      <p>Dr. Stone</p>
+      <p>Ishigami</p>
+    </div>
+    <div class="panel panel5">
+      <p>Gogeta</p>
+      <p>Dragon Ball Z</p>
+      <p>Fusion!</p>
+    </div>
+  </div>
+
+  <script>
+    const panels = document.querySelectorAll('.panel');
+    
+
+    function toggleOpen (){
+      console.log('hi');
+      this.classList.toggle('open');
+    }
+    function toggleActive(e){
+      console.log('happy')
+      if(e.propertyName.includes('flex')){
+        this.classList.toggle('open-active');
+      }
+
+    }
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen))
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive))
+  </script>
+
+
+
+</body>
+</html>
