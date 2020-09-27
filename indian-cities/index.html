@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Indian Cities & States</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="Search here...">
+    <ul class="suggestions">
+      <li>Search for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+<script>
+const endpoint = 'https://raw.githubusercontent.com/nshntarora/Indian-Cities-JSON/master/cities.json';
+
+
+const cities = [];
+
+fetch(endpoint).then(blob => blob.json()).then( data => cities.push(...data));
+
+
+function findMatches (wordToMatch, cities) {
+  return cities.filter(place => {
+    const regex   = new RegExp(wordToMatch, 'gi');
+    return place.name.match(regex) || place.state.match(regex);
+  });
+}
+
+function displayMatches(){
+  const matchArray = findMatches(this.value, cities);
+  const html = matchArray.map(place => {
+    return `
+    <li>
+    <span class="name"> ${place.name}, ${place.state}</span>
+    </li>
+    `;
+  }).join('');
+  suggestions.innerHTML = html;
+}
+
+const searchInput = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
+searchInput.addEventListener('change', displayMatches);
+searchInput.addEventListener('keyup', displayMatches);
+
+
+console.log(cities)
+</script>
+</body>
+</html>
