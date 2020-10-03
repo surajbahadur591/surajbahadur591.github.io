@@ -1,0 +1,19 @@
+{
+  "name": "gum",
+  "version": "1.0.0",
+  "main": "scripts.js",
+  "scripts": {
+    "start": "browser-sync start --server --files \"*.css, *.html, *.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.12.5 <2.23.2"
+  },
+  "dependencies": {
+    "copy-descriptor": "^0.1.1",
+    "core-util-is": "^1.0.2",
+    "dashdash": "^1.14.1"
+  },
+  "description": ""
+}
